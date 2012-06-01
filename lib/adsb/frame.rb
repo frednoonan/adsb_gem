@@ -1,3 +1,5 @@
+require 'adsb/icao_id'
+
 module ADSB
 	class Frame
 		attr_reader :sbs1_msg_type, :icao_id, :time
@@ -26,7 +28,7 @@ module ADSB
 		# Fill attributes sbs1_msg_type, icao_id and time from params
 		def initialize(args)
 			@sbs1_msg_type = args[:sbs1_msg_type]
-			@icao_id       = args[:icao_id]
+			@icao_id       = IcaoId.new(args[:icao_id])
 			@time          = args[:time]
 		end
 
