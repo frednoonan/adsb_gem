@@ -1,5 +1,6 @@
 require 'time'
 require 'adsb/frame'
+require 'pp'
 
 module ADSB
 	# The ADSB::SBS1 class can be used to parse SBS-1 compatible (TCP port
@@ -12,10 +13,9 @@ module ADSB
 		# parses one line of SBS-1 compatible data and returns a corresponding
 		# ADSB::Frame object
 		def self.parse(line)
-			data = line.chomp.split(',')
+			data = line.chomp.split(',', -1)
+			raise ArgumentError, "incorrect data format (#{data.size} entries)" if data.size != 22
 			msg_type = data[1].to_i
-			# FIXME
-			#icao_id  = ADSB::IcaoId.new(data[4])
 			icao_id  = data[4]
 			time     = Time.parse(data[6] + " " + data[7])
 			frame    = ADSB::Frame.from_sbs1(:sbs1_msg_type => msg_type,

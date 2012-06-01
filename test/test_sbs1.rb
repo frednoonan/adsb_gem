@@ -30,7 +30,7 @@ class TestSBS1 < Test::Unit::TestCase
 	end
 
 	def test_all_call_reply
-		frame = ADSB::SBS1.parse('MSG,8,0,4,3C664E,104,2012/05/25,20:24:20.549,2012/05/25,20:24:20.549,,,,,,,,,,,')
+		frame = ADSB::SBS1.parse('MSG,8,0,4,3C664E,104,2012/05/25,20:24:20.549,2012/05/25,20:24:20.549,,,,,,,,,,,,')
 		assert_equal(ADSB::Frame::AllCallReply, frame.class)
 		assert_equal('3C664E', frame.icao_id.to_s)
 	end
