@@ -182,7 +182,7 @@ module ADSB
 			["AE", "United Arab Emirates", "100010010110"],
 			["GB", "United Kingdom", "010000"],
 			["TZ", "United Republic of Tanzania", "000010000000"],
-			["UM", "United States", "1010"],
+			["US", "United States", "1010"],
 			["UY", "Uruguay", "111010010000"],
 			["UZ", "Uzbekistan", "01010000011111"],
 			["VU", "Vanuatu", "11001001000000"],
