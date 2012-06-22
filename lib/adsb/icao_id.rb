@@ -117,6 +117,7 @@ module ADSB
 			["FM", "Micronesia, Federated States of", "01101000000100"],
 			["MC", "Monaco", "01001101010000"],
 			["MN", "Mongolia", "01101000001000"],
+			["ME", "Montenegro", "01010001011000"],
 			["MA", "Morocco", "000000100"],
 			["MZ", "Mozambique", "000000000110"],
 			["MM", "Myanmar", "011100000100"],

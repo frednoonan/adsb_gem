@@ -2,7 +2,7 @@ require 'rubygems'
 
 Gem::Specification.new do |gem|
 	gem.name         = 'adsb'
-	gem.version      = '0.1'
+	gem.version      = '0.2'
 	gem.author       = 'Fred Noonan'
 	gem.email        = 'frednoonan@hushmail.com'
 	gem.platform     = Gem::Platform::RUBY
