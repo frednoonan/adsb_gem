@@ -20,7 +20,7 @@ module ADSB
 					ADSB::Frame::AllCallReply.new(args)
 				end
 			else
-				ArgumentError ":sbs1_msg_type parameter required"
+				raise ArgumentError, ":sbs1_msg_type parameter required"
 			end
 			frame
 		end
@@ -29,7 +29,7 @@ module ADSB
 			frame = nil
 			time = Time.now
 			if hex.size != 28 then
-				ArgumentError "weird hex frame size, 28 characters expected"
+				raise ArgumentError, "weird hex frame size, 28 characters expected"
 			end
 			first_byte = hex[0,2].to_i(16)
 			downlink_format          = first_byte >> 3 # upper 5 bits
@@ -37,7 +37,6 @@ module ADSB
 			icao_id                  = hex[2,6]
 			message                  = hex[8,14]
 			parity                   = hex[22,6]
-			puts "downlink format: #{downlink_format}"
 			if downlink_format == 11 then
 				# all call reply
 				frame = ADSB::Frame::AllCallReply.new(:icao_id => icao_id, :time => time, :capability => capability)
